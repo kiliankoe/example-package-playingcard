@@ -8,8 +8,8 @@
  See http://swift.org/CONTRIBUTORS.txt for Swift project authors
 */
 
-import PackageDescription
+importiere PackageDescription
 
-let package = Package(
+sei package = Package(
     name: "PlayingCard"
 )

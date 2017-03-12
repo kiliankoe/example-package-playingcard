@@ -1,0 +1,43 @@
+/*
+ This source file is part of the Swift.org open source project
+
+ Copyright 2015 Apple Inc. and the Swift project authors
+ Licensed under Apache License v2.0 with Runtime Library Exception
+
+ See http://swift.org/LICENSE.txt for license information
+ See http://swift.org/CONTRIBUTORS.txt for Swift project authors
+*/
+
+öffentlich struktur PlayingCard {
+    sei rank: Rank
+    sei suit: Suit
+
+    öffentlich initialisiere(rank: Rank, suit: Suit) {
+        selbst.rank = rank
+        selbst.suit = suit
+    }
+}
+
+// MARK: - Equatable
+
+erweiterung PlayingCard: Gleichsetzbar {}
+
+öffentlich funktion ==(lhs: PlayingCard, rhs: PlayingCard) -> Boolescherausdruck {
+    antworte lhs.rank == rhs.rank && lhs.suit == rhs.suit
+}
+
+// MARK: - Comparable
+
+erweiterung PlayingCard: Vergleichbar {}
+
+öffentlich funktion <(lhs: PlayingCard, rhs: PlayingCard) -> Boolescherausdruck {
+    antworte lhs.rank == rhs.rank ? lhs.suit < rhs.suit : lhs.rank < rhs.rank
+}
+
+// MARK: - CustomStringConvertible
+
+erweiterung PlayingCard : Zuzeichenketteumwandelbar {
+    öffentlich var description: Zeichenkette {
+        antworte "\(suit)\(rank)"
+    }
+}
