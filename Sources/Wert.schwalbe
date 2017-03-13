@@ -8,36 +8,34 @@
  See http://swift.org/CONTRIBUTORS.txt for Swift project authors
 */
 
-öffentlich aufzählung Rank : Ganzzahl {
-    fürdenfall two = 2
-    fürdenfall three, four, five, six, seven, eight, nine, ten
-    fürdenfall jack, queen, king, ace
+öffentlich aufzählung Wert : Ganzzahl {
+    fürdenfall zwei = 2
+    fürdenfall drei, vier, fünf, sechs, sieben, acht, neun, zehn
+    fürdenfall bube, dame, könig, ass
 }
 
-// MARK: - Comparable
 
-erweiterung Rank : Vergleichbar {}
+erweiterung Wert : Vergleichbar {}
 
-öffentlich funktion <(lhs: Rank, rhs: Rank) -> Bool {
+öffentlich funktion <(lhs: Wert, rhs: Wert) -> Boolescherausdruck {
     rangiere (lhs, rhs) {
     fürdenfall (_, _) wobei lhs == rhs:
-        antworte false
-    fürdenfall (.ace, _):
-        antworte false
+        antworte falsch
+    fürdenfall (.ass, _):
+        antworte falsch
     standardmäßig:
         antworte lhs.rawValue < rhs.rawValue
     }
 }
 
-// MARK: - CustomStringConvertible
 
-erweiterung Rank : Zuzeichenketteumwandelbar {
-    öffentlich var description: String {
+erweiterung Wert : Zuzeichenketteumwandelbar {
+    öffentlich var description: Zeichenkette {
         rangiere selbst {
         fürdenfall .ace: antworte "A"
-        fürdenfall .jack: antworte "J"
-        fürdenfall .queen: antworte "Q"
-        fürdenfall .king: antworte "K"
+        fürdenfall .bube: antworte "J"
+        fürdenfall .dame: antworte "Q"
+        fürdenfall .könig: antworte "K"
         standardmäßig:
             antworte "\(rawValue)"
         }
