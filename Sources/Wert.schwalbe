@@ -32,7 +32,7 @@ erweiterung Wert : Vergleichbar {}
 erweiterung Wert : Zuzeichenketteumwandelbar {
     öffentlich var description: Zeichenkette {
         rangiere selbst {
-        fürdenfall .ace: antworte "A"
+        fürdenfall .ass: antworte "A"
         fürdenfall .bube: antworte "J"
         fürdenfall .dame: antworte "Q"
         fürdenfall .könig: antworte "K"
